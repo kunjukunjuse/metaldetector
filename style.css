@@ -1,0 +1,547 @@
+/* --- 7. Color Theme & Global Styles --- */
+:root {
+    --color-dark: #121212; /* Deep Black/Dark Gray */
+    --color-gold: #FFD700; /* Pure Gold */
+    --color-neon-green: #39FF14; /* Neon Green for accents/buttons */
+    --color-light-gray: #E0E0E0;
+    --color-text: #F5F5F5;
+    --color-accent-bg: #1A1A1A;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.dark-bg {
+    background-color: var(--color-accent-bg);
+}
+
+.section-title {
+    font-size: 2.5em;
+    text-align: center;
+    color: var(--color-gold);
+    margin-bottom: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.subsection-title {
+    font-size: 1.8em;
+    color: var(--color-light-gray);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-neon-green);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- Navigation --- */
+header {
+    background-color: rgba(18, 18, 18, 0.95);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    color: var(--color-gold);
+    font-weight: 900;
+}
+
+nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 1.1em;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 5px;
+}
+
+nav a:hover {
+    color: var(--color-gold);
+    border-bottom: 2px solid var(--color-neon-green);
+}
+
+.nav-contact-btn {
+    background-color: var(--color-neon-green);
+    color: var(--color-dark) !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none !important;
+}
+
+.nav-contact-btn:hover {
+    background-color: var(--color-gold);
+    color: var(--color-dark) !important;
+    transform: translateY(-2px);
+}
+
+/* --- 1. Hero Section --- */
+.hero-section {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+        url('placeholder-hero-image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    /* This is the placeholder for the AI Image Description */
+    /* You MUST replace the background image URL */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1), transparent 70%);
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    color: var(--color-gold);
+    margin-bottom: 15px;
+    font-weight: 900;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    color: var(--color-neon-green);
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* Global Button Style */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.hero-btn {
+    background-color: var(--color-neon-green);
+    color: var(--color-dark);
+    box-shadow: 0 0 20px var(--color-neon-green);
+}
+
+.hero-btn:hover {
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    box-shadow: 0 0 30px var(--color-gold);
+    transform: scale(1.05);
+}
+
+/* --- 2. Devices/Media Section --- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.gallery-item {
+    background-color: var(--color-accent-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Placeholder Styling for AI Image Descriptions */
+.img-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-light-gray);
+    font-style: italic;
+    border: 1px dashed var(--color-gold);
+    transition: opacity 0.3s;
+}
+.gallery-item:hover .img-placeholder { opacity: 0.8; }
+
+/* 8. Hover Zoom Effect */
+.hover-zoom:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+.video-wrapper {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    background-color: var(--color-dark);
+    padding: 10px;
+    border: 3px solid var(--color-neon-green);
+    box-shadow: 0 0 15px var(--color-neon-green);
+}
+.video-wrapper iframe {
+    display: block;
+}
+
+/* --- 3. Services Section --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.service-card {
+    background-color: var(--color-dark);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-top: 5px solid var(--color-gold);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+}
+
+.gold-icon {
+    font-size: 3em;
+    color: var(--color-gold);
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    color: var(--color-neon-green);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* --- 5. About Section --- */
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-list {
+    flex: 1;
+}
+
+.about-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-list li {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.4;
+}
+
+.green-bullet {
+    color: var(--color-neon-green);
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    border: 3px solid var(--color-gold);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+}
+
+.about-image .img-placeholder {
+    height: 350px;
+}
+
+/* --- 6. Contact Section --- */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    background-color: var(--color-dark);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-accent-bg);
+}
+
+.contact-form input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: var(--color-text);
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus {
+    border-color: var(--color-neon-green);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+    outline: none;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.whatsapp-contact-btn {
+    flex: 1;
+    background-color: #25D366; /* WhatsApp Green */
+    color: white;
+}
+
+.whatsapp-contact-btn:hover {
+    background-color: #1DA84E;
+    transform: scale(1.05);
+}
+
+.call-contact-btn {
+    flex: 1;
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+}
+
+.call-contact-btn:hover {
+    background-color: #E6C200;
+    transform: scale(1.05);
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: var(--color-light-gray);
+}
+
+.contact-info p:first-child {
+    color: var(--color-neon-green);
+    font-weight: bold;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #0A0A0A;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* --- 4. WhatsApp Floating Button --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.whatsapp-float .float-text {
+    visibility: hidden;
+    width: 150px;
+    background-color: var(--color-dark);
+    color: var(--color-text);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    right: 70px;
+    font-size: 14px;
+    line-height: 1.2;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    border: 1px solid var(--color-neon-green);
+}
+
+.whatsapp-float:hover .float-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Animated Pulse Effect */
+.whatsapp-float {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+
+/* --- 8. Smooth Animations (Initial Hidden State) --- */
+.fade-in-up, .slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+.animated { /* Class added by JS when element is in view */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2em;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    /* Navigation Collapse */
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        display: inline-block;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        margin-top: 30px;
+        max-width: 100%;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+
+    .whatsapp-float .float-text {
+        right: 60px;
+    }
+}
+
+
+.images1{
+    height: 249px;
+    width: 378px;
+    
+}
+.images2{
+    width: 380px;
+    height: 250px;
+}
+.mainimage{
+
+    height: 350px;
+    width: 490px;
+}
+.newimage{
+    background-image: url("main.jpeg");
+    background-size: cover;  
+    background-repeat: no-repeat;
+  
+
+}
+#pro{
+    color: #0A0A0A;
+}

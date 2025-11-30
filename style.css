@@ -535,11 +535,18 @@ footer {
     height: 350px;
     width: 490px;
 }
-
+.maini{
+    background-image: url("unnamed\ \(1\).jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
   
 
 
 #pro{
+    color: #0A0A0A;
+}
+#pro1{
     color: #0A0A0A;
 }
 .home{

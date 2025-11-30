@@ -535,16 +535,20 @@ footer {
     height: 350px;
     width: 490px;
 }
-.newimage{
-    background-image: url("main.jpeg");
-    background-size: cover;  
-    background-repeat: no-repeat;
+
   
 
-}
+
 #pro{
     color: #0A0A0A;
 }
 .home{
     background-color:black;
+}
+#insta{
+border: 3px solid black;
+background-color: #9fbd1b;
+border-radius: 50px;
+color:black;
+     
 }
